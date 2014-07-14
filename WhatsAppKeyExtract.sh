@@ -5,8 +5,8 @@
 ## You DO NOT need root for this to work, but you DO need Java installed #
 ## Base Script by: TripCode                                              #
 ## Thanks to: Nikolay Elenkov for abe.jar / David Fraser                 #
-## Updated By: Abinash Bishoyi (Added support for 4.4.3 devices)         #
-## Version: v2.0 (19th Jun 2014)                                         #
+## Updated By: Abinash Bishoyi (Added support for 4.4.x/L devices)       #
+## Version: v2.1 (15th Jul 2014)                                         #
 ##########################################################################
 d="`mktemp -d`"
 (

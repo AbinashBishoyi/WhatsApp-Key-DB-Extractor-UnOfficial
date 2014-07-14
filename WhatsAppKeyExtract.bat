@@ -6,8 +6,8 @@ echo = This script will extract the WhatsApp Key file and DB on Android 4.0+ =
 echo = You DO NOT need root for this to work, but you DO need Java installed =
 echo = Base Script by: TripCode                                              =
 echo = Thanks to: Nikolay Elenkov for abe.jar / David Fraser                 =
-echo = Updated By: Abinash Bishoyi (Added support for 4.4.3 devices)         =
-echo = Version: v2.0 (19th Jun 2014)                                         =
+echo = Updated By: Abinash Bishoyi (Added support for 4.4.x/L devices)       =
+echo = Version: v2.1 (15th Jul 2014)                                         =
 echo =========================================================================
 echo.
 for /f %%j in ("java.exe") do (
