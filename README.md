@@ -31,7 +31,7 @@ a unified method in which they can offer their app users WhatsApp Decryption for
 # Windows Instructions
 
 1. Extract `master.zip` on your computer maintaining the directory structure.
-2. Browse to the extracted folder and click on `WhatsAppKeyExtract.bat`. If it is unable to find Java installtion in your system, then it will start installtion. Rerun the script again after Java installation.
+2. Browse to the extracted folder and click on `WhatsAppKeyExtract.bat`. If it is unable to find Java installation in your system, then it will start installation. Rerun the script again after Java installation.
 3. Few have complained that the script keep on asking to install Java though Java is already installed, then you can click on `WhatsAppKeyExtractNoJavaCheck.bat`.
 4. Connect your device via USB, unlock your screen and wait for "Full backup" to appear. (If you have never used USB Debugging before, you may also need to verify the fingerprint.)
 5. Leave the password field blank and tap on "Back up my data".
@@ -47,5 +47,5 @@ a unified method in which they can offer their app users WhatsApp Decryption for
 # Authors
 
 * Author: Abinash Bishoyi
-* Intial Work: TripCode
+* Initial Work: TripCode
 * THANKS: Nikolay Elenkov for ade.jar and Snoop05 for ADB Installer. David Fraser for scriptify Linux version.
