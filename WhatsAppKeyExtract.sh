@@ -1,12 +1,12 @@
 #!/bin/bash
 ##########################################################################
-##                  WhatsApp Key/DB Extractor v2                         #
+##                  WhatsApp Key/DB Extractor v2.2                       #
 ## This script will extract the WhatsApp Key file and DB on Android 4.0+ #
 ## You DO NOT need root for this to work, but you DO need Java installed #
 ## Base Script by: TripCode                                              #
-## Thanks to: Nikolay Elenkov for abe.jar / David Fraser                 #
-## Updated By: Abinash Bishoyi (Added support for 4.4.x/L devices)       #
-## Version: v2.1 (15th Jul 2014)                                         #
+## Thanks to: Nikolay Elenkov for abe.jar and David Fraser               #
+## Updated By: Abinash Bishoyi (Added support for 4.4.X/L devices)       #
+## Version: v2.2 (15th Aug 2014)                                         #
 ##########################################################################
 d="`mktemp -d`"
 (

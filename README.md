@@ -2,7 +2,7 @@
 
 https://github.com/AbinashBishoyi/WhatsApp-Key-DB-Extractor/archive/master.zip
 
-# WhatsApp Key/DB Extractor v2
+# WhatsApp Key/DB Extractor v2.2
 
 The purpose of this script is to provide a method for WhatsApp users to extract their cipher key on NON-ROOTED
 Android devices. The cipher key is required to decrypt WhatsApp CRYPT6 and CRYPT7 backup files. This script
@@ -31,8 +31,8 @@ a unified method in which they can offer their app users WhatsApp Decryption for
 # Windows Instructions
 
 1. Extract `master.zip` on your computer maintaining the directory structure.
-2. Browse to the extracted folder and click on `WhatsAppKeyExtract.bat`.
-3. Few have complained that it's keep on asking to install Java though Java is already installed, then you can click on `WhatsAppKeyExtractNoJavaCheck.bat`.
+2. Browse to the extracted folder and click on `WhatsAppKeyExtract.bat`. If it is unable to find Java installtion in your system, then it will start installtion. Rerun the script again after Java installation.
+3. Few have complained that the script keep on asking to install Java though Java is already installed, then you can click on `WhatsAppKeyExtractNoJavaCheck.bat`.
 4. Connect your device via USB, unlock your screen and wait for "Full backup" to appear. (If you have never used USB Debugging before, you may also need to verify the fingerprint.)
 5. Leave the password field blank and tap on "Back up my data".
 6. The "extracted" folder will now contain your "whatsapp.key", "msgstore.db" and "wa.db".
