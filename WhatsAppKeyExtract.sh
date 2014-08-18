@@ -14,6 +14,10 @@
   # Exit on error
   set -e
 
+  # Check that (some) dependencies are available on the path.
+  [[ -z $(which adb) ]] && { echo "adb is required" 1>&2; exit 1; }
+  [[ -z $(which python) ]] && { echo "python is required" 1>&2; exit 1; }
+
   # Create a temporary directory based on the script name and a random pattern.
   TEMPORARY=$(mktemp -d "$(basename "${BASH_SOURCE}").XXXXXXXX")
 
