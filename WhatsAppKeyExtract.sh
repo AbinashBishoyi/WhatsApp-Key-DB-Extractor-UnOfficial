@@ -8,7 +8,7 @@
 ## Updated By: Abinash Bishoyi (Added support for 4.4.X/L devices)       #
 ## Version: v2.2 (15th Aug 2014)                                         #
 ##########################################################################
-d="`mktemp -d`"
+d=$(mktemp -d "$(basename "${BASH_SOURCE}").XXXXXXXX")
 (
   cd "$d"
   [ -f whatsapp.ab ] || adb backup -f whatsapp.ab -noapk com.whatsapp
