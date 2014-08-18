@@ -37,15 +37,22 @@ a unified method in which they can offer their app users WhatsApp Decryption for
 5. Leave the password field blank and tap on "Back up my data".
 6. The "extracted" folder will now contain your "whatsapp.key", "msgstore.db" and "wa.db".
 
-# Linux Instructions
+# Linux/Mac OS X/Unix Instructions
  
 1. Extract `master.zip` on your computer maintaining the directory structure.
-2. Browse to the extracted folder and run `. ./WhatsAppKeyExtract.sh` and wait for "Full backup" to appear. (If you have never used USB Debugging before, you may also need to verify the fingerprint.)
-3. Leave the password field blank and tap on "Back up my data".
-4. The key will be copied back onto your machine in such a way that WhatsApp TriCrypt will work.
+2. Browse to the extracted folder and run `./WhatsAppKeyExtract.sh`
+3. Wait for "Full backup" to appear on your phone. (If you have never used USB Debugging before, you may also need to verify the fingerprint.)
+4. Leave the password field blank and tap on "Back up my data".
+5. The key will be copied back onto your machine in such a way that WhatsApp TriCrypt will work.
+6. The "extracted" folder will now contain your "whatsapp.key", "msgstore.db" and "wa.db".
+
+# Run TriCrypt
+1. Click "Enable crypt6/7 (Root Required)" in TriCrypt - but with after running the script, root isn't required.
+2. Click "Decrypt WhatsApp Database".
+3. You are now ready to run other applications; optionally trigger or run SMS Backup+.
 
 # Authors
 
 * Author: Abinash Bishoyi
 * Initial Work: TripCode
-* THANKS: Nikolay Elenkov for ade.jar and Snoop05 for ADB Installer. David Fraser for scriptify Linux version.
+* THANKS: Nikolay Elenkov for ade.jar and Snoop05 for ADB Installer. David Fraser for scriptify Linux version. [Joel Purra](http://joelpurra.com/) for Mac OS X fixes, some script improvements.
