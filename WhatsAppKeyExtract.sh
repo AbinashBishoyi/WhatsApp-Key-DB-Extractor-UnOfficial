@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ##########################################################################
 ##                  WhatsApp Key/DB Extractor v2.2                       #
 ## This script will extract the WhatsApp Key file and DB on Android 4.0+ #
@@ -8,11 +8,32 @@
 ## Updated By: Abinash Bishoyi (Added support for 4.4.X/L devices)       #
 ## Version: v2.2 (15th Aug 2014)                                         #
 ##########################################################################
-d=$(mktemp -d "$(basename "${BASH_SOURCE}").XXXXXXXX")
+
+# Using a subshell because the (old?) instructions used `source` as `. ./WhatsAppKeyExtract.sh`.
 (
-  cd "$d"
-  [ -f whatsapp.ab ] || adb backup -f whatsapp.ab -noapk com.whatsapp
-  dd if=whatsapp.ab bs=1 skip=24 | python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" | tar x
-  adb push apps/com.whatsapp/f/key /sdcard/WhatsApp/Databases/.nomedia
+  # Exit on error
+  set -e
+
+  # Create a temporary directory based on the script name and a random pattern.
+  TEMPORARY=$(mktemp -d "$(basename "${BASH_SOURCE}").XXXXXXXX")
+
+  # Remove the temporary directory upon script exit (for any reason).
+  trap 'rm -rf "$TEMPORARY"' EXIT
+
+  whatsappFile="whatsapp.ab"
+  whatsappNamespace="com.whatsapp"
+
+  (
+  	# Perform commands in the temporary directory.
+    cd "$TEMPORARY"
+
+    # Get backup file.
+    [[ -f "$whatsappFile" ]] || adb backup -f "$whatsappFile" -noapk "$whatsappNamespace"
+
+    # Uncompress, unpack backup file.
+    dd if="$whatsappFile" bs=1 skip=24 | python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" | tar x
+
+    # Push the decryption key to the device.
+    adb push "apps/$whatsappNamespace/f/key" "/sdcard/WhatsApp/Databases/.nomedia"
+  )
 )
-rm -r "$d"
