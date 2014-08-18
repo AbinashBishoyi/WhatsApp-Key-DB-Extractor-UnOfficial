@@ -24,6 +24,7 @@
   # Remove the temporary directory upon script exit (for any reason).
   trap 'rm -rf "$TEMPORARY"' EXIT
 
+  outputDirectory="$PWD/extracted/"
   whatsappFile="whatsapp.ab"
   whatsappNamespace="com.whatsapp"
 
@@ -36,6 +37,14 @@
 
     # Uncompress, unpack backup file.
     dd if="$whatsappFile" bs=1 skip=24 | python -c "import zlib,sys;sys.stdout.write(zlib.decompress(sys.stdin.read()))" | tar x
+
+    # Create an output directory for unencrypted databases.
+    mkdir -p "$outputDirectory"
+
+    # Extract key, unencrypted message and contacts databases.
+    cp "apps/$whatsappNamespace/f/key" "$outputDirectory/whatsapp.key"
+    cp "apps/$whatsappNamespace/db/msgstore.db" "$outputDirectory"
+    cp "apps/$whatsappNamespace/db/wa.db" "$outputDirectory"
 
     # Push the decryption key to the device.
     adb push "apps/$whatsappNamespace/f/key" "/sdcard/WhatsApp/Databases/.nomedia"
