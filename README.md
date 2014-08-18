@@ -46,10 +46,23 @@ a unified method in which they can offer their app users WhatsApp Decryption for
 5. The key will be copied back onto your machine in such a way that WhatsApp TriCrypt will work.
 6. The "extracted" folder will now contain your "whatsapp.key", "msgstore.db" and "wa.db".
 
-# Run TriCrypt
-1. Click "Enable crypt6/7 (Root Required)" in TriCrypt - but with after running the script, root isn't required.
-2. Click "Decrypt WhatsApp Database".
-3. You are now ready to run other applications; optionally trigger or run SMS Backup+.
+# Install/Run TriCrypt
+
+Get TriCrypt from here: https://play.google.com/store/apps/details?id=com.tricrypt
+
+## Run TriCrypt
+1. Click "Enable crypt6/7 (Root Required)" in TriCrypt. *After running the key fixes/scripts in this folder, root isn't actually required.*
+
+### Auto Mode
+1. Click "Service Running - Tap To Enable", this will run a background service that will run each 15 mins to detect the WhatsApp Backup DB, and will automatically do the Decrypt/Recrypt DB.
+2. Sit back and enjoy.
+
+### Manual Mode
+1. Click "Decrypt WhatsApp Database".
+2. Click "Recrypt WhatsApp Database".
+3. (Optional) Click "Trigger SMS Backup+".
+
+Make sure you have enable the "3rd party integration" from the Auto backup setting menu at SMS Backup+, so that TriCrypt can trigger it once it is done with Decrypt/Recrypt.
 
 # Authors
 
