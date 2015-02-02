@@ -30,7 +30,11 @@ echo Please connect your Android device with USB Debugging enabled:
 echo.
 )
 bin\adb.exe wait-for-device
+echo Uninstalling older version
+adb uninstall com.whatsapp
+echo Installing latest WhatsApp version
 if exist WhatsApp_Patched.apk (bin\adb.exe install -r WhatsApp_Patched.apk)
+echo Backing up WhatsApp
 bin\adb.exe backup -f tmp\whatsapp.ab -noapk com.whatsapp
 if exist tmp\whatsapp.ab (
 echo.
