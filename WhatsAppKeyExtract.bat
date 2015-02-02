@@ -31,7 +31,7 @@ echo.
 )
 bin\adb.exe wait-for-device
 echo Uninstalling older version
-adb uninstall com.whatsapp
+bin\adb.exe uninstall com.whatsapp
 echo Installing latest WhatsApp version
 if exist WhatsApp_Patched.apk (bin\adb.exe install -r WhatsApp_Patched.apk)
 echo Backing up WhatsApp
