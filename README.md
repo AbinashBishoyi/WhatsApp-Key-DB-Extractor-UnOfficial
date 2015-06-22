@@ -1,3 +1,5 @@
+## Please use http://forum.xda-developers.com/showthread.php?t=2770982 until the new version...
+
 # Download
 
 https://github.com/AbinashBishoyi/WhatsApp-Key-DB-Extractor/archive/master.zip
