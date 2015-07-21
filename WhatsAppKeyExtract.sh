@@ -20,6 +20,7 @@
 
   # Create a temporary directory based on the script name and a random pattern.
   TEMPORARY=$(mktemp -d "$(basename "${BASH_SOURCE}").XXXXXXXX")
+  mkdir -p tmp
 
   # Remove the temporary directory upon script exit (for any reason).
   trap 'rm -rf "$TEMPORARY"' EXIT
@@ -27,10 +28,18 @@
   outputDirectory="$PWD/extracted/"
   whatsappFile="whatsapp.ab"
   whatsappNamespace="com.whatsapp"
+  LegacyFile="$PWD/LegacyWhatsApp.apk"
+  NewFile="$PWD/WhatsApp.apk"
 
   (
-  	# Perform commands in the temporary directory.
+    [[ -f "WhatsApp.apk" ]] || curl -o WhatsApp.apk http://www.whatsapp.com/android/current/WhatsApp.apk
+
+    echo "Installing legacy WhatsApp 2.11.431"
+    adb install -r -d "$LegacyFile"
+
+    # Perform commands in the temporary directory.
     cd "$TEMPORARY"
+    #cd tmp
 
     # Get backup file.
     [[ -f "$whatsappFile" ]] || adb backup -f "$whatsappFile" -noapk "$whatsappNamespace"
@@ -48,5 +57,10 @@
 
     # Push the decryption key to the device.
     adb push "apps/$whatsappNamespace/f/key" "/sdcard/WhatsApp/Databases/.nomedia"
+
+    echo Updating WhatsApp
+    adb install -r -d "$NewFile"
+
+    echo Consider a Paypal donation to abinashbishoyi@gmail.com
   )
 )
