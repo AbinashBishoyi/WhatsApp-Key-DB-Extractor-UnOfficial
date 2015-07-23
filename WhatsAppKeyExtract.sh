@@ -20,7 +20,6 @@
 
   # Create a temporary directory based on the script name and a random pattern.
   TEMPORARY=$(mktemp -d "$(basename "${BASH_SOURCE}").XXXXXXXX")
-  mkdir -p tmp
 
   # Remove the temporary directory upon script exit (for any reason).
   trap 'rm -rf "$TEMPORARY"' EXIT
@@ -39,7 +38,6 @@
 
     # Perform commands in the temporary directory.
     cd "$TEMPORARY"
-    #cd tmp
 
     # Get backup file.
     [[ -f "$whatsappFile" ]] || adb backup -f "$whatsappFile" -noapk "$whatsappNamespace"
