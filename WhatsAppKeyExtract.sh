@@ -32,6 +32,7 @@
 
   (
     [[ -f "WhatsApp.apk" ]] || curl -o WhatsApp.apk http://www.whatsapp.com/android/current/WhatsApp.apk
+    [[ -f "LegacyWhatsApp.apk" ]] || curl -o LegacyWhatsApp.apk http://www.whatsapp.com/android/2.11.431/WhatsApp.apk
 
     echo "Installing legacy WhatsApp 2.11.431"
     adb install -r -d "$LegacyFile"
